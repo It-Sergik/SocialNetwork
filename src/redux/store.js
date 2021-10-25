@@ -26,6 +26,11 @@ let store = {
                 {id: 1, message: "Hi, how are you?"},
                 {id: 2, message: "It's my first post"},],
             newPostText: "it-kamasutra.com"
+        },
+        usersPage: {
+            users: [
+
+            ]
         }
     },
     getState() {
