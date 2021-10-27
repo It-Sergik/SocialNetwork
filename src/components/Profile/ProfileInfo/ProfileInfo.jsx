@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
                 <img src={props.profile.photos.large}/>
                 avatar + description
             </div>
-            <div>{props.profile.contacts.facebook}</div>
+            <div>{props.profile.fullName}</div>
         </div>
     )
 }

@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import store from "./redux/reduxStore";
 import {Provider} from "react-redux";
-import {createStore} from "redux";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -13,7 +12,7 @@ ReactDOM.render(
         </Provider>
     </React.StrictMode>, document.getElementById('root'));
 
-window = createStore(store);
+
 
 
 
