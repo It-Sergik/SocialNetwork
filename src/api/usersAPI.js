@@ -1,4 +1,4 @@
-import {instance} from "./axios";
+import {instance} from "./axiosInstance";
 
 export const usersAPI = {
 

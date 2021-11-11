@@ -1,33 +1,22 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import React from "react";
+import ProfileReduxForm from "../ProfileForm";
 
 
 const MyPosts = (props) => {
     let postsElement = props.posts.map(post => <Post message={post.message}/>)
-    let newPostElement = React.createRef();
 
-    let onAddPost = () => {
-        props.addPost();
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.onPostChange(text);
-    }
 
     return (
         <div>
             <div className={s.postBlock}>
                 <h3>My Post</h3>
-                <div>
-                    <div>
-                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-                    </div>
-                    <div>
-                        <button onClick={onAddPost}>Add button</button>
-                    </div>
-                </div>
+                <ProfileReduxForm onSubmit={onAddPost}/>
             </div>
             <div className={s.post}>
                 {postsElement}
