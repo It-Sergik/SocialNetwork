@@ -1,21 +1,22 @@
 import React from "react";
-import {sendMessageCreator} from "../../redux/dialogsReducer";
+import {sendMessage} from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {getDialogsPage, getIsAuth} from "../../redux/dialogsSelector";
 
 const mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage,
-        isAuth: state.auth.isAuth
+        dialogsPage: getDialogsPage(state),
+        isAuth: getIsAuth(state)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         sendMessage: (newMessageBody) => {
-            dispatch(sendMessageCreator(newMessageBody));
+            dispatch(sendMessage(newMessageBody));
         }
     }
 }
